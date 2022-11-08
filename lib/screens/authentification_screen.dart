@@ -3,14 +3,12 @@ import 'package:snapchat_app_ui/screens/login_screen.dart';
 import 'package:snapchat_app_ui/screens/signup_screen.dart';
 import 'package:snapchat_app_ui/widgets/auth_button.dart';
 
-class AuthentificationScreen extends StatefulWidget {
-  const AuthentificationScreen({Key? key}) : super(key: key);
-
+class AuthenticationScreen extends StatefulWidget {
   @override
-  State<AuthentificationScreen> createState() => _AuthentificationScreenState();
+  _AuthenticationScreenState createState() => _AuthenticationScreenState();
 }
 
-class _AuthentificationScreenState extends State<AuthentificationScreen> {
+class _AuthenticationScreenState extends State<AuthenticationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,16 +19,18 @@ class _AuthentificationScreenState extends State<AuthentificationScreen> {
           SizedBox(height: 100),
           Container(
             alignment: Alignment.center,
-            child: Image.asset('assets/images/logo.png'),
+            child: Image.asset('assets/logo.png'),
             height: 160,
           ),
-          SizedBox(height: 10),
+          SizedBox(
+            height: 10,
+          ),
           Container(
             child: Column(
               children: [
                 AuthButton(
                   color: Colors.red,
-                  text: 'LOG IN',
+                  text: "LOG IN",
                   onPress: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => LoginScreen()));
@@ -38,17 +38,15 @@ class _AuthentificationScreenState extends State<AuthentificationScreen> {
                 ),
                 AuthButton(
                   color: Colors.blue,
-                  text: 'SIGN UP',
+                  text: "SIGN UP",
                   onPress: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SignupScreen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignupScreen()));
                   },
                 ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
